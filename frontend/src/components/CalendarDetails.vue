@@ -13,8 +13,7 @@
 
 <script>
 // import axios from 'axios';
-import { mapGetters, mapActions} from 'vuex';
-
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'CalendarDetails',
@@ -22,7 +21,7 @@ export default {
   //   events: [],
   // }),
   computed: {
-    ...mapGetters('events', ['events'])
+    ...mapGetters('events', ['events']),
   },
   methods: {
     // fetchEvents() {
@@ -35,7 +34,7 @@ export default {
     //       console.error(error);
     //     });
     // }
-    ...mapActions('events', ['fetchEvents'])
+    ...mapActions('events', ['fetchEvents']),
   },
 };
 </script>

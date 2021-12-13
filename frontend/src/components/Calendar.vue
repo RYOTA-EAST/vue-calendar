@@ -1,45 +1,29 @@
 <template>
   <div>
-    <h1>Calendar</h1>
-    <ul>
-      <li v-for="event in events" :key="event.id">
+    <!-- <h1 class="text-h1">Calendar</h1>
+    <v-list>
+      <v-list-item v-for="event in events" :key="event.id">
         {{ event.name }}
-      </li>
-    </ul>
-    <button type="submit" @click="fetchEvents()">fetchEvents</button>
+      </v-list-item>
+    </v-list>
+    <v-btn type="submit" @click="fetchEvents()">fetchEvents</v-btn> -->
 
-    <CalendarDetails />
+    <v-sheet height="100vh">
+      <v-calendar></v-calendar>
+    </v-sheet>
   </div>
 </template>
 
 <script>
-// import axios from 'axios';
-import { mapGetters, mapActions} from 'vuex';
-import CalendarDetails from './CalendarDetails.vue'
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  components: {
-    CalendarDetails,
-  },
   name: 'Calendar',
-  // data: () => ({
-  //   events: []
-  // }),
   computed: {
-    ...mapGetters('events', ['events'])
+    ...mapGetters('events', ['events']),
   },
   methods: {
-    // fetchEvents() {
-    //   axios
-    //     .get('http://localhost:3000/events')
-    //     .then(response => {
-    //       this.events = response.data;
-    //     })
-    //     .catch(error => {
-    //       console.error(error);
-    //     });
-    // }
-    ...mapActions('events', ['fetchEvents'])
+    ...mapActions('events', ['fetchEvents']),
   },
 };
 </script>
